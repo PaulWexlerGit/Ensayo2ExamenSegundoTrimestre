@@ -21,7 +21,8 @@ public class PersonaController {
         personaDAOI.createPersona(persona);
         return persona;
     }
-    public void crearComentario(Persona persona, Libro libro, int valoracion, String comentario){
+
+    public void crearComentario(Persona persona, Libro libro, int valoracion, String comentario) {
         Comentario objComentario = new Comentario(valoracion, comentario);
         objComentario.setLibro(libro);
         objComentario.setPersona(persona);
@@ -36,8 +37,8 @@ public class PersonaController {
     }
 
     public Persona logIn(String nombreUsuario, String contrasegna) {
-        Persona persona= personaDAOI.logIn(nombreUsuario, contrasegna);
-        if (persona!= null){
+        Persona persona = personaDAOI.logIn(nombreUsuario, contrasegna);
+        if (persona != null) {
             persona.setLastLogIn(LocalDateTime.now());
             personaDAOI.actualizaPersona(persona);
         }

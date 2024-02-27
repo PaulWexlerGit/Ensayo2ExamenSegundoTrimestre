@@ -17,7 +17,7 @@ public class Main {
         personaController.crearComentario(pedro, libro1, 4, "Bastante bueno");
         Persona pedroLog = personaController.logIn("pedro1", "1234");
         if (pedroLog != null) {
-            System.out.println("LogIn correcto. Su último logIn fue: "+pedroLog.getLastLogIn());
+            System.out.println("LogIn correcto. Su último logIn fue: " + pedroLog.getLastLogIn());
         } else {
             System.out.println("LogIn incorrecto");
         }
@@ -25,11 +25,11 @@ public class Main {
         personaController.registrarLectura(pedro, libro1);
 
         System.out.println("Libros leidos por Pedro: ");
-        for (Libro libro : pedro.getLibrosLeidos()){
+        for (Libro libro : pedro.getLibrosLeidos()) {
             System.out.println(libro);
         }
         System.out.println("Los libros disponibles son: ");
-        for (Libro libro : libroController.getAllLibros()){
+        for (Libro libro : libroController.getAllLibros()) {
             System.out.println(libro);
         }
     }

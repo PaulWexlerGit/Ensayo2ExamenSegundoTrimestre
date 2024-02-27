@@ -27,6 +27,7 @@ public class PersonaDAOImplements implements PersonaDAO {
         }
     }
 
+    @Override
     public void actualizaPersona(Persona persona) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -41,6 +42,7 @@ public class PersonaDAOImplements implements PersonaDAO {
         }
     }
 
+    @Override
     public Persona logIn(String nombreUsuario, String contrasegna) {
         Persona persona;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {

@@ -12,7 +12,8 @@ import util.HibernateUtil;
 
 import java.util.List;
 
-public class LibroDAOImplements {
+public class LibroDAOImplements implements LibroDAO {
+    @Override
     public void crateLibro(Libro libro) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -27,6 +28,7 @@ public class LibroDAOImplements {
         }
     }
 
+    @Override
     public List<Libro> getAllLibros() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             CriteriaBuilder builder = session.getCriteriaBuilder();
